@@ -3,21 +3,16 @@
 Simple project to document my learnings in using Terraform to build infra on DigitalOcean. This example infrastructure creates two Nginx servers that are load balanced by an HAProxy server.
 
 ## Setup
-Download/Install [Terraform!](https://www.terraform.io/downloads.html), add to your path and create a DigitalOcean account.
+Download/Install [Terraform](https://www.terraform.io/downloads.html), add to your path and create a DigitalOcean account.
 
 ### Personal Access Token
-[Create!](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#HowToGenerateaPersonalAccessToken) a DigitalOcean account and generate a Personal Access Token. Export the token:
+[Create](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#HowToGenerateaPersonalAccessToken) a DigitalOcean account and generate a Personal Access Token. Export the token:
 ```
 export DO_TOKEN={your personal access token}
 ```
 
-### SSH key to DO account
-[Create!](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) a SSH key pair locally and then add it to the DO account. Get the fingerprint of the SSH public key:
-```
-ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'
-```
-
-Export the fingerprint (after `md5:`) as:
+### Add SSH key to DO account
+[Create](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) a SSH key pair locally and then add it to the DO account. Get the fingerprint of the SSH public key and export the fingerprint as:
 ```
 export SSH_FINGERPRINT=xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx
 ```
@@ -33,7 +28,7 @@ Definition of the Nginx servers are `www-1.tf` and `www-2.tf` respectively.
 Firstly, each configuration defines the droplet resource name and attributes as 
 ```
 resource "digitalocean_droplet" "www-*" {
-    # Droplet attributes
+    # Droplet attributes (i.e. region, machine size, etc)
 } 
 ```
 
@@ -116,10 +111,10 @@ terraform apply terraform.tfplan
 ```
 
 ## Resources
-* [Terraform DigitalOcean provider!](https://www.terraform.io/docs/providers/do/index.html)
-* [DigitalOcean droplet specification!](https://www.terraform.io/docs/providers/do/r/droplet.html)
-* [How To Use the DigitalOcean API v2!](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#HowToGenerateaPersonalAccessToken)
-* [DigitalOcean API 2 docs!](https://developers.digitalocean.com/documentation/v2/)
-* [How To Use Terraform with DigitalOcean!](https://www.digitalocean.com/community/tutorials/how-to-use-terraform-with-digitalocean)
+* [Terraform DigitalOcean provider](https://www.terraform.io/docs/providers/do/index.html)
+* [DigitalOcean droplet specification](https://www.terraform.io/docs/providers/do/r/droplet.html)
+* [How To Use the DigitalOcean API v2](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#HowToGenerateaPersonalAccessToken)
+* [DigitalOcean API 2 docs](https://developers.digitalocean.com/documentation/v2/)
+* [How To Use Terraform with DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-terraform-with-digitalocean)
 
 
