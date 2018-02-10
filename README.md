@@ -1,6 +1,6 @@
 # Terraform with DigitalOcean
 
-Simple project to document my learnings in using Terraform to build infra on DigitalOcean. This example infrastructure creates two Nginx servers that are load balanced by an HAProxy server.
+Simple project to document my learnings in using Terraform to build infra on DigitalOcean. This example creates two Nginx servers that are load balanced by an HAProxy server.
 
 ## Setup
 Download/Install [Terraform](https://www.terraform.io/downloads.html), add to your path and create a DigitalOcean account.
@@ -18,7 +18,7 @@ export SSH_FINGERPRINT=xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx
 ```
 
 ## Provider Configuration
-DigitalOcean provider configuration is defined in `provider.tf`.
+DigitalOcean provider configuration as well as the Terraform variables are defined in `provider.tf`.
 
 ## Define Droplets
 
